@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cedbuv5hfao76"]
 
-[ext_resource type="Script" path="res://Boomerang.gd" id="1_jq2uf"]
+[ext_resource type="Script" path="res://Boomerang/Boomerang.gd" id="1_5ft3n"]
 [ext_resource type="Texture2D" uid="uid://bcms6rbepoy3j" path="res://icon.svg" id="1_protr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhpgb"]
@@ -9,7 +9,7 @@ size = Vector2(68, 67)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8ufj8"]
 
 [node name="Boomerang" type="CharacterBody2D"]
-script = ExtResource("1_jq2uf")
+script = ExtResource("1_5ft3n")
 springForce = 0.2
 maxSpeed = Vector2(1000, 1000)
 

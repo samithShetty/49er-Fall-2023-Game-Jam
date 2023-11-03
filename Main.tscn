@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://shvhivg8vtpy"]
 
-[ext_resource type="PackedScene" uid="uid://l3b4ru4pobbq" path="res://Player.tscn" id="1_qn2vq"]
-[ext_resource type="PackedScene" uid="uid://cedbuv5hfao76" path="res://Boomerang.tscn" id="2_wqlc2"]
+[ext_resource type="PackedScene" uid="uid://l3b4ru4pobbq" path="res://Player/Player.tscn" id="1_qn2vq"]
+[ext_resource type="PackedScene" uid="uid://cedbuv5hfao76" path="res://Boomerang/Boomerang.tscn" id="2_wqlc2"]
 
 [node name="Main" type="Node2D"]
 

@@ -7,6 +7,7 @@
 size = Vector2(123, 121)
 
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_psmd7")
 moveSpeed = 400.0
 

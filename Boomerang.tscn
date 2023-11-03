@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cedbuv5hfao76"]
+
+[ext_resource type="Script" path="res://Boomerang.gd" id="1_jq2uf"]
+[ext_resource type="Texture2D" uid="uid://bcms6rbepoy3j" path="res://icon.svg" id="1_protr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhpgb"]
+size = Vector2(68, 67)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8ufj8"]
+
+[node name="Boomerang" type="CharacterBody2D"]
+script = ExtResource("1_jq2uf")
+springForce = 0.15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_nhpgb")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.701961, 0.0509804, 0.309804, 1)
+material = SubResource("CanvasItemMaterial_8ufj8")
+scale = Vector2(0.58264, 0.529438)
+texture = ExtResource("1_protr")

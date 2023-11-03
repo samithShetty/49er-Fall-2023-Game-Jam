@@ -9,7 +9,7 @@ size = Vector2(123, 121)
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_psmd7")
-moveSpeed = 400.0
+moveSpeed = 600.0
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("2_31x4j")

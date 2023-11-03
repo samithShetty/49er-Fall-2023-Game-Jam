@@ -10,7 +10,8 @@ size = Vector2(68, 67)
 
 [node name="Boomerang" type="CharacterBody2D"]
 script = ExtResource("1_jq2uf")
-springForce = 0.15
+springForce = 0.2
+maxSpeed = Vector2(1000, 1000)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

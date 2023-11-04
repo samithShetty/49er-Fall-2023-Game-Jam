@@ -55,7 +55,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -94,8 +94,8 @@ texture_filter = 1
 position = Vector2(-1, -31)
 scale = Vector2(9.0625, 9.0625)
 sprite_frames = SubResource("SpriteFrames_vb4j4")
-animation = &"run"
-frame_progress = 0.867646
+animation = &"idle"
+frame_progress = 0.88286
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

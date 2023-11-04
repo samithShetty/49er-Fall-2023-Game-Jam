@@ -1,7 +1,10 @@
 extends CharacterBody2D
 class_name NPC
 
+enum State {IDLE, ROAM, AGGRO}
+
 var player: CharacterBody2D
+var state: State = State.ROAM
 var is_aggro: bool = false
 var chase_direction : Vector2
 var target_location: Vector2
@@ -11,18 +14,18 @@ var target_location: Vector2
 
 func _ready():
 	player = get_node("../Player")
-	print(player)
 	set_roam_target()
-	print(is_aggro)
 	
 func _process(delta):
-	print(is_aggro)
-	if is_aggro:
-		target_location = player.position
-		
-	elif position.distance_squared_to(target_location) < 200:
-		set_roam_target()
-		
+	match state:
+		State.AGGRO:
+			target_location = player.position
+			
+		State.ROAM:
+			if position.distance_squared_to(target_location) < 20:
+				pause_roam()
+
+
 	chase_direction = (target_location - position).normalized()
 	velocity = chase_direction * move_speed
 	update_sprite()
@@ -31,8 +34,14 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func update_sprite():
-	sprite.flip_h = velocity.x < 0
-	if velocity:
+	if velocity.x < 0:
+		sprite.flip_h = true
+	elif velocity.x > 0:
+		sprite.flip_h = false
+	
+	if state == State.IDLE:
+		sprite.play("idle")
+	else:
 		sprite.play("run")
 
 func _on_area_2d_body_entered(body):
@@ -46,4 +55,12 @@ func _on_area_2d_body_entered(body):
 			is_aggro = true
 
 func set_roam_target():
-	target_location = position + randi_range(200, 500)*Vector2.from_angle(randf()*2*PI) 
+	target_location = position + randi_range(400, 800)*Vector2.from_angle(randf()*2*PI) 
+
+func pause_roam():
+	target_location = position
+	velocity = Vector2.ZERO
+	state = State.IDLE
+	await get_tree().create_timer(randf_range(2.0, 5.0)).timeout
+	state = State.ROAM
+	set_roam_target()

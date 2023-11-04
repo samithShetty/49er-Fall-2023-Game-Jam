@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://shvhivg8vtpy"]
+[gd_scene load_steps=4 format=3 uid="uid://shvhivg8vtpy"]
 
 [ext_resource type="PackedScene" uid="uid://l3b4ru4pobbq" path="res://Player/Player.tscn" id="1_qn2vq"]
 [ext_resource type="PackedScene" uid="uid://b0eo3ys5fu7g2" path="res://NPC/NPC.tscn" id="3_f35kg"]
+[ext_resource type="Texture2D" uid="uid://bcms6rbepoy3j" path="res://icon.svg" id="3_kjxqq"]
 
 [node name="Main" type="Node2D"]
 
@@ -9,3 +10,10 @@
 
 [node name="NPC" parent="." instance=ExtResource("3_f35kg")]
 position = Vector2(818, 492)
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.137255)
+show_behind_parent = true
+position = Vector2(-519, -271)
+scale = Vector2(50, 50)
+texture = ExtResource("3_kjxqq")

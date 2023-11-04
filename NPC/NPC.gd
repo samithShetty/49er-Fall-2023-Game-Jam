@@ -5,10 +5,10 @@ enum State {IDLE, ROAM, AGGRO}
 
 var player: CharacterBody2D
 var state: State = State.ROAM
-var is_aggro: bool = false
 var chase_direction : Vector2
 var target_location: Vector2
 @export var move_speed: float
+@export var push_force: float
 @onready var sprite = $AnimatedSprite2D
 @onready var nav_agent = $NavigationAgent2D
 
@@ -45,14 +45,14 @@ func update_sprite():
 		sprite.play("run")
 
 func _on_area_2d_body_entered(body):
-	if body.name == "Boomerang":
-		if is_aggro:
+	if body is Boomerang:
+		if state == State.AGGRO:
 			if chase_direction.dot(body.velocity) > 0:
 				queue_free()
 			else:
 				pass
 		else:
-			is_aggro = true
+			state = State.AGGRO
 
 func set_roam_target():
 	target_location = position + randi_range(400, 800)*Vector2.from_angle(randf()*2*PI) 

@@ -83,6 +83,7 @@ collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_1stie")
 move_speed = 200.0
+push_force = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -95,7 +96,7 @@ position = Vector2(-1, -31)
 scale = Vector2(9.0625, 9.0625)
 sprite_frames = SubResource("SpriteFrames_vb4j4")
 animation = &"idle"
-frame_progress = 0.88286
+frame_progress = 0.0655478
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

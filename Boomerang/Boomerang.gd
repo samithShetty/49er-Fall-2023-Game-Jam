@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Boomerang extends CharacterBody2D
 @export var player: CharacterBody2D
 @export var springForce: float
 @export var maxSpeed: Vector2

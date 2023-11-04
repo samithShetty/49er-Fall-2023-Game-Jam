@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-@export var moveSpeed: float
+@export var move_speed: float
+var move_input: Vector2
+var push_forces: Vector2
 var canThrow:bool = true
 
 # Called when the node enters the scene tree for the first time.
@@ -21,7 +23,9 @@ func throw_boomerang():
 	add_sibling(boomerang)
 
 func _physics_process(delta):
-	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * moveSpeed
+	move_input = Input.get_vector("move_left", "move_right", "move_up", "move_down") * move_speed
+	velocity = move_input + push_forces
+	push_forces *= 0.9
 
 func _input(event):
 	if event.is_action_pressed("throw") and canThrow:
@@ -30,6 +34,11 @@ func _input(event):
 
 
 func _on_area_2d_body_entered(body):
-	if (body.name == "Boomerang"):
+	if body is Boomerang:
 		print("YOU DIED")
 		get_tree().reload_current_scene()
+	elif body is NPC and body.state == body.State.AGGRO:
+		push_forces += (position - body.position) * body.push_force
+		print("PUSH")
+
+	print(body)

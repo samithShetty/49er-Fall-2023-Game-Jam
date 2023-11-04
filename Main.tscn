@@ -7,6 +7,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_qn2vq")]
+move_speed = 500.0
 
 [node name="NPC" parent="." instance=ExtResource("3_f35kg")]
 position = Vector2(818, 492)

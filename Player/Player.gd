@@ -12,11 +12,11 @@ func _process(delta):
 	move_and_slide()
 
 func throw_boomerang():
-	var throwForce = 1500
+	var throwForce = 1600
 	var direction = (get_global_mouse_position() - position).normalized()
 	var boomerang = preload("res://Boomerang/Boomerang.tscn").instantiate()
 	boomerang.velocity = direction * throwForce
-	boomerang.position = position + direction*50
+	boomerang.position = position + direction*150
 	boomerang.player = self
 	add_sibling(boomerang)
 
@@ -27,3 +27,9 @@ func _input(event):
 	if event.is_action_pressed("throw") and canThrow:
 		throw_boomerang()
 		canThrow = false
+
+
+func _on_area_2d_body_entered(body):
+	if (body.name == "Boomerang"):
+		print("YOU DIED")
+		get_tree().reload_current_scene()

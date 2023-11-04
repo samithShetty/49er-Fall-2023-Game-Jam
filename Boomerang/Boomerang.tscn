@@ -9,6 +9,7 @@ size = Vector2(68, 67)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8ufj8"]
 
 [node name="Boomerang" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_5ft3n")
 springForce = 0.2
 maxSpeed = Vector2(1000, 1000)

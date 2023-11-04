@@ -10,7 +10,7 @@
 move_speed = 500.0
 
 [node name="NPC" parent="." instance=ExtResource("3_f35kg")]
-position = Vector2(818, 492)
+position = Vector2(400, 200)
 
 [node name="Icon" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.137255)

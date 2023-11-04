@@ -46,11 +46,14 @@ func update_sprite():
 func _on_area_2d_body_entered(body):
 	
 	if body is Boomerang:
-		var is_backstab = chase_velocity.normalized().dot(body.velocity.normalized()) > 0.2
+		#var is_backstab = chase_velocity.normalized().dot(body.velocity.normalized()) > 0.2
+		var is_backstab = (body.velocity.x < 0 == sprite.flip_h) and chase_velocity.normalized().dot(body.velocity.normalized()) > 0.2
 		if state == State.AGGRO and is_backstab:
 				queue_free()
 			
 		else:
+			push_force += 1 
+			move_speed *= 1.2
 			push_forces += body.velocity
 			state = State.AGGRO
 

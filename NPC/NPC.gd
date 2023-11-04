@@ -47,7 +47,7 @@ func update_sprite():
 func _on_area_2d_body_entered(body):
 	if body is Boomerang:
 		if state == State.AGGRO:
-			if chase_direction.dot(body.velocity) > 0:
+			if chase_direction.normalized().dot(body.velocity.normalized()) > 0.1:
 				queue_free()
 			else:
 				pass
@@ -62,5 +62,6 @@ func pause_roam():
 	velocity = Vector2.ZERO
 	state = State.IDLE
 	await get_tree().create_timer(randf_range(2.0, 5.0)).timeout
-	state = State.ROAM
-	set_roam_target()
+	if state == State.IDLE: # State might have changed (e.g. aggro'ed on player) during idle
+		state = State.ROAM
+		set_roam_target()

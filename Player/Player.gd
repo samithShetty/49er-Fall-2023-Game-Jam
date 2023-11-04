@@ -39,6 +39,3 @@ func _on_area_2d_body_entered(body):
 		get_tree().reload_current_scene()
 	elif body is NPC and body.state == body.State.AGGRO:
 		push_forces += (position - body.position) * body.push_force
-		print("PUSH")
-
-	print(body)

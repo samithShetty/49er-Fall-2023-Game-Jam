@@ -48,7 +48,6 @@ func update_sprite():
 
 func _on_area_2d_body_entered(body):
 	if body is Boomerang:
-		print("YOU DIED")
 		Global.end_game()
 	elif body is NPC and body.state == body.State.AGGRO:
 		push_forces += (position - body.position) * body.push_force

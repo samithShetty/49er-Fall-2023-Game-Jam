@@ -17,7 +17,7 @@ func _process(delta):
 	
 
 func throw_boomerang():
-	var throwForce = 1600
+	var throwForce = 1800
 	var direction = (get_global_mouse_position() - position).normalized()
 	var boomerang = preload("res://Boomerang/Boomerang.tscn").instantiate()
 	boomerang.velocity = direction * throwForce

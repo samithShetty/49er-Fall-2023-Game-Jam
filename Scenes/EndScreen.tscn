@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bc4ay000aqc8i"]
+[gd_scene load_steps=3 format=3 uid="uid://bc4ay000aqc8i"]
 
 [ext_resource type="Script" path="res://UI/EndScreen.gd" id="1_ct4kk"]
+[ext_resource type="AudioStream" uid="uid://ol8lrby1n8bx" path="res://Assets/Music/xDeviruchi - The Final of The Fantasy.wav" id="2_r7cmt"]
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
@@ -75,3 +76,9 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 36
 text = "Click to restart"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_r7cmt")
+volume_db = -5.0
+pitch_scale = 0.9
+autoplay = true

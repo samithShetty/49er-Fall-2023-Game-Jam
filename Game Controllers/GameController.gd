@@ -22,3 +22,7 @@ func _on_npc_death():
 func _on_timer_timeout():
 	spawn_npc()
 	timer.start()
+
+
+func _on_audio_stream_player_2d_finished():
+	$AudioStreamPlayer2D.play()

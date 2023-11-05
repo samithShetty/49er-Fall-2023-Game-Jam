@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://shvhivg8vtpy"]
 
-[ext_resource type="PackedScene" uid="uid://l3b4ru4pobbq" path="res://Player/Player.tscn" id="1_qn2vq"]
-[ext_resource type="Texture2D" uid="uid://bcms6rbepoy3j" path="res://icon.svg" id="3_kjxqq"]
-[ext_resource type="PackedScene" uid="uid://cg678iom1uua0" path="res://Game Controllers/GameController.tscn" id="4_1571m"]
-[ext_resource type="PackedScene" uid="uid://dmrgkmmddqvbu" path="res://NPC/NPC2.tscn" id="4_ydm8w"]
+[ext_resource type="PackedScene" uid="uid://l3b4ru4pobbq" path="res://Player/Player.tscn" id="1_xdo5a"]
+[ext_resource type="Texture2D" uid="uid://bcms6rbepoy3j" path="res://icon.svg" id="2_kfv4x"]
+[ext_resource type="PackedScene" uid="uid://dmrgkmmddqvbu" path="res://NPC/NPC2.tscn" id="3_t1us7"]
+[ext_resource type="PackedScene" uid="uid://cg678iom1uua0" path="res://Game Controllers/GameController.tscn" id="4_tdo76"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_qn2vq")]
+[node name="Player" parent="." instance=ExtResource("1_xdo5a")]
 move_speed = 500.0
 
 [node name="Icon" type="Sprite2D" parent="."]
@@ -15,12 +15,12 @@ modulate = Color(1, 1, 1, 0.137255)
 show_behind_parent = true
 position = Vector2(-519, -271)
 scale = Vector2(50, 50)
-texture = ExtResource("3_kjxqq")
+texture = ExtResource("2_kfv4x")
 
-[node name="NPC2" parent="." instance=ExtResource("4_ydm8w")]
+[node name="NPC2" parent="." instance=ExtResource("3_t1us7")]
 position = Vector2(235, 459)
 
-[node name="GameController" parent="." node_paths=PackedStringArray("score_label") instance=ExtResource("4_1571m")]
+[node name="GameController" parent="." node_paths=PackedStringArray("score_label") instance=ExtResource("4_tdo76")]
 score_label = NodePath("../CanvasLayer/GUI/Label")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

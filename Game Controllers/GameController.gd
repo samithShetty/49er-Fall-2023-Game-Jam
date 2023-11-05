@@ -6,10 +6,6 @@ extends Node
 @export var score_label: Label
 var npc_count: int
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	Global.score = 0
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	score_label.text = "Score: " + str(Global.score)

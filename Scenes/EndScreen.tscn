@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc4ay000aqc8i"]
+
+[ext_resource type="Script" path="res://UI/EndScreen.gd" id="1_ct4kk"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ct4kk")
+gameover_messages = Array[String](["Well, you caught it...", "Try using your hands next time...", "There goes the other eye...", "Nice throw! ", "Try not getting hit this time...", "I guess it really does come back", "Zoo Wee Mama!"])
+
+[node name="GameOver" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.2
+offset_left = -230.0
+offset_top = -56.6
+offset_right = 230.0
+offset_bottom = 56.4
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+uppercase = true
+
+[node name="Message" type="RichTextLabel" parent="GameOver"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -20.0
+offset_right = 400.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/italics_font_size = 40
+bbcode_enabled = true
+text = "[center] [i] Zoo Wee Mama! [/i] [/center]"
+scroll_active = false
+autowrap_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Score: 150"
+
+[node name="RestartLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.732
+anchor_right = 0.5
+anchor_bottom = 0.732
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 36
+text = "Click to restart"

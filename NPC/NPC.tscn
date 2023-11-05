@@ -97,7 +97,7 @@ position = Vector2(-1, -31)
 scale = Vector2(6.125, 6.125)
 sprite_frames = SubResource("SpriteFrames_vb4j4")
 animation = &"idle"
-frame_progress = 0.626347
+frame_progress = 0.234232
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

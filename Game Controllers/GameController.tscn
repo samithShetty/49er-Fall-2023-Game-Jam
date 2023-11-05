@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg678iom1uua0"]
+[gd_scene load_steps=7 format=3 uid="uid://cg678iom1uua0"]
 
 [ext_resource type="Script" path="res://Game Controllers/GameController.gd" id="1_gcod6"]
 [ext_resource type="PackedScene" uid="uid://b0eo3ys5fu7g2" path="res://NPC/NPC.tscn" id="2_wvdx3"]
 [ext_resource type="PackedScene" uid="uid://dmrgkmmddqvbu" path="res://NPC/NPC2.tscn" id="3_buoak"]
+[ext_resource type="PackedScene" uid="uid://cyjr7qxuwfnnw" path="res://NPC/NPC3.tscn" id="4_066oq"]
 [ext_resource type="AudioStream" uid="uid://bqf5aslp0qwk4" path="res://Assets/Music/xDeviruchi - Prepare for Battle! .wav" id="4_ii540"]
+[ext_resource type="PackedScene" uid="uid://4ngbm21okruj" path="res://NPC/NPC4.tscn" id="5_26vng"]
 
 [node name="GameController" type="Node"]
 script = ExtResource("1_gcod6")
-NPC_types = Array[PackedScene]([ExtResource("2_wvdx3"), ExtResource("3_buoak")])
+NPC_types = Array[PackedScene]([ExtResource("2_wvdx3"), ExtResource("3_buoak"), ExtResource("4_066oq"), ExtResource("5_26vng")])
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 autostart = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

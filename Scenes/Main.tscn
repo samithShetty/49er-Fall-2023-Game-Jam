@@ -1482,7 +1482,7 @@ size = Vector2(191.625, 22.25)
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_y7tbd"]
 points = PackedVector2Array(0, -23, 20, 0, 0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysinn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sg280"]
 size = Vector2(536.5, 22.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dklx7"]
@@ -1513,7 +1513,7 @@ layer_1/tile_data = PackedInt32Array(-262138, 65536, 13, -196602, 65536, 13, -13
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
 position = Vector2(0, 89)
 collision_layer = 8
-collision_mask = 7
+collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_xxgpn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
@@ -1531,7 +1531,7 @@ shape = SubResource("ConvexPolygonShape2D_y7tbd")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
 position = Vector2(0.625, -186.375)
-shape = SubResource("RectangleShape2D_ysinn")
+shape = SubResource("RectangleShape2D_sg280")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
 position = Vector2(-2.375, 0.875)

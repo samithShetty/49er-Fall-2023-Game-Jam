@@ -5,7 +5,7 @@ enum State {IDLE, ROAM, AGGRO}
 signal death
 
 var player: CharacterBody2D
-var state: State = State.ROAM
+@export var state: State = State.ROAM
 var chase_velocity : Vector2
 var target_location: Vector2
 var push_forces: Vector2

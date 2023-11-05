@@ -1,0 +1,105 @@
+[gd_scene load_steps=13 format=3 uid="uid://cyjr7qxuwfnnw"]
+
+[ext_resource type="Script" path="res://NPC/NPC.gd" id="1_d73t6"]
+[ext_resource type="Texture2D" uid="uid://e7onr3vwm80u" path="res://Assets/PixelDudes/creeper_sprite.png" id="2_fbmer"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_205yl"]
+size = Vector2(80, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y47f"]
+atlas = ExtResource("2_fbmer")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f63qp"]
+atlas = ExtResource("2_fbmer")
+region = Rect2(16, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm7g6"]
+atlas = ExtResource("2_fbmer")
+region = Rect2(32, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qins6"]
+atlas = ExtResource("2_fbmer")
+region = Rect2(48, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky1e3"]
+atlas = ExtResource("2_fbmer")
+region = Rect2(0, 72, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqhpb"]
+atlas = ExtResource("2_fbmer")
+region = Rect2(32, 72, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05pbq"]
+atlas = ExtResource("2_fbmer")
+region = Rect2(96, 72, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vb4j4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y47f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f63qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm7g6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qins6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky1e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqhpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05pbq")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av4ea"]
+size = Vector2(80, 92)
+
+[node name="NPC" type="CharacterBody2D"]
+collision_layer = 4
+motion_mode = 1
+script = ExtResource("1_d73t6")
+state = 2
+move_speed = 175.0
+push_force = 25.0
+points = 20
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -5)
+shape = SubResource("RectangleShape2D_205yl")
+debug_color = Color(0.835294, 0.568627, 0, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, -31)
+scale = Vector2(6.125, 6.125)
+sprite_frames = SubResource("SpriteFrames_vb4j4")
+animation = &"run"
+frame_progress = 0.0831391
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -5)
+shape = SubResource("RectangleShape2D_av4ea")
+debug_color = Color(0.835294, 0.568627, 0, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

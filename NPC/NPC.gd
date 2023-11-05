@@ -15,7 +15,6 @@ var push_forces: Vector2
 @export var points: int
 
 @onready var sprite = $AnimatedSprite2D
-@onready var nav_agent = $NavigationAgent2D
 
 func _ready():
 	player = get_node("../Player")
@@ -62,7 +61,7 @@ func _on_area_2d_body_entered(body):
 			state = State.AGGRO
 
 func set_roam_target():
-	target_location = position + randi_range(400, 800)*Vector2.from_angle(randf()*2*PI) 
+	target_location = Vector2(randi_range(-2000,2000), randi_range(-500, 275)) 
 
 func pause_roam():
 	target_location = position

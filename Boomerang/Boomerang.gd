@@ -4,15 +4,7 @@ class_name Boomerang extends CharacterBody2D
 @export var maxSpeed: Vector2
 @onready var timer = $Timer
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	timer.start()
-	
 func _physics_process(delta):
 	var distance = player.position - position
 	velocity += distance * springForce

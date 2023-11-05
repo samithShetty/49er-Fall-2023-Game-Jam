@@ -99,8 +99,6 @@ sprite_frames = SubResource("SpriteFrames_vb4j4")
 animation = &"idle"
 frame_progress = 0.234232
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2

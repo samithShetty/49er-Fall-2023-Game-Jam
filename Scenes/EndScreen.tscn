@@ -79,6 +79,6 @@ text = "Click to restart"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_r7cmt")
-volume_db = -5.0
+volume_db = -10.0
 pitch_scale = 0.9
 autoplay = true

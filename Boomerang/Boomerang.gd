@@ -20,9 +20,6 @@ func _physics_process(delta):
 	velocity.clamp(-maxSpeed, maxSpeed)
 	rotation_degrees += distance.length()/15
 	move_and_slide()
-	
-	
-
 
 func _on_timer_timeout():
 	springForce *1.1

@@ -1513,7 +1513,7 @@ layer_1/tile_data = PackedInt32Array(-262138, 65536, 13, -196602, 65536, 13, -13
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
 position = Vector2(0, 89)
 collision_layer = 8
-collision_mask = 5
+collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_xxgpn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]

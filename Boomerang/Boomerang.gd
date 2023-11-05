@@ -17,5 +17,7 @@ func _physics_process(delta):
 	velocity += distance * springForce
 	velocity*= 0.98
 	velocity.clamp(-maxSpeed, maxSpeed)
+	rotation_degrees += distance.length()/20
 	move_and_slide()
+	
 	

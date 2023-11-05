@@ -1,12 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cedbuv5hfao76"]
+[gd_scene load_steps=4 format=3 uid="uid://cedbuv5hfao76"]
 
 [ext_resource type="Script" path="res://Boomerang/Boomerang.gd" id="1_5ft3n"]
-[ext_resource type="Texture2D" uid="uid://bcms6rbepoy3j" path="res://icon.svg" id="1_protr"]
+[ext_resource type="Texture2D" uid="uid://cm4pluec6c1pf" path="res://Assets/boomerang.png" id="2_nwbqu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhpgb"]
-size = Vector2(68, 67)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8ufj8"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_orcia"]
+radius = 8.60205
+height = 53.521
 
 [node name="Boomerang" type="CharacterBody2D"]
 collision_layer = 2
@@ -15,11 +14,16 @@ springForce = 0.2
 maxSpeed = Vector2(1000, 1000)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_nhpgb")
+position = Vector2(0, 10)
+rotation = -2.39285
+shape = SubResource("CapsuleShape2D_orcia")
 
-[node name="Icon" type="Sprite2D" parent="."]
-modulate = Color(0.701961, 0.0509804, 0.309804, 1)
-material = SubResource("CanvasItemMaterial_8ufj8")
-scale = Vector2(0.58264, 0.529438)
-texture = ExtResource("1_protr")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
+rotation = 2.39285
+shape = SubResource("CapsuleShape2D_orcia")
+
+[node name="Boomerang" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("2_nwbqu")

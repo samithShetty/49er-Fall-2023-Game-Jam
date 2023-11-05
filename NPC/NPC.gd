@@ -2,14 +2,18 @@ extends CharacterBody2D
 class_name NPC
 
 enum State {IDLE, ROAM, AGGRO}
+signal death
 
 var player: CharacterBody2D
 var state: State = State.ROAM
 var chase_velocity : Vector2
 var target_location: Vector2
 var push_forces: Vector2
+
 @export var move_speed: float
 @export var push_force: float
+@export var points: int
+
 @onready var sprite = $AnimatedSprite2D
 @onready var nav_agent = $NavigationAgent2D
 
@@ -49,7 +53,7 @@ func _on_area_2d_body_entered(body):
 		#var is_backstab = chase_velocity.normalized().dot(body.velocity.normalized()) > 0.2
 		var is_backstab = (body.velocity.x < 0 == sprite.flip_h) and chase_velocity.normalized().dot(body.velocity.normalized()) > 0.2
 		if state == State.AGGRO and is_backstab:
-				queue_free()
+				die()
 			
 		else:
 			push_force += 1 
@@ -68,3 +72,9 @@ func pause_roam():
 	if state == State.IDLE: # State might have changed (e.g. aggro'ed on player) during idle
 		state = State.ROAM
 		set_roam_target()
+
+func die():
+	Global.score += points
+	print(Global.score)
+	emit_signal("death")
+	queue_free()

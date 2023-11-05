@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var move_speed: float
 var move_input: Vector2
 var push_forces: Vector2
-var canThrow:bool = true
+var can_throw:bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,9 +32,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
-	if event.is_action_pressed("throw") and canThrow:
+	if event.is_action_pressed("throw") and can_throw:
 		throw_boomerang()
-		canThrow = false
+		can_throw = false
 
 func update_sprite():
 	if velocity != Vector2.ZERO:
@@ -51,5 +51,4 @@ func _on_area_2d_body_entered(body):
 		print("YOU DIED")
 		get_tree().reload_current_scene()
 	elif body is NPC and body.state == body.State.AGGRO:
-		print("Test")
 		push_forces += (position - body.position) * body.push_force
